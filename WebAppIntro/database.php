@@ -6,8 +6,8 @@
         public function __construct() {
             // Notice that private connection information is *NOT* part of the source
             // and therefore does not end up in public repos, etc.
-            $connectionString = getenv("defaultConnection");
-            $varsString = str_replace("Database=sayhicloud;Data Source=ap-cdbr-azure-southeast-b.cloudapp.net;User Id=b6f1c149c5ffc1;Password=b77e5856","&", $connectionString);
+            $connectionString = getenv("MYSQLCONNSTR_defaultConnection");
+            $varsString = str_replace(";","&", $connectionString);
             parse_str($varsString);
 
             $host = $Data_Source;
